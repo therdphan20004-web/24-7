@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ก็แกน่ารักขนากนี้อ่ะเนาะบี๋</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Sarabun", sans-serif;
+            background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        /* Intro screen */
+        #intro {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #ffdde1,#ee9ca7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 1s ease;
+        }
+
+        #intro h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            animation: blink 1.5s infinite;
+        }
+
+        #intro button {
+            padding: 12px 25px;
+            font-size: 1.2em;
+            background: #ffcc00;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #intro button:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Main content */
+        .container {
+            display: none;
+            padding: 40px 20px;
+            animation: fadeIn 2s ease;
+        }
+
+        .farewell-text {
+            font-size: 1.4em; /* ลดขนาดตัวอักษร */
+            line-height: 1.8;
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            animation: slideUp 2.5s ease;
+        }
+
+        /* Video styling */
+        .video-container {
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            animation: fadeIn 3s ease;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            max-width: 900px;
+            margin: 30px auto;
+            animation: fadeIn 3s ease;
+        }
+
+        .grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+            transition: transform 0.3s;
+        }
+
+        .grid img:hover {
+            transform: scale(1.08);
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 1.2em;
+            opacity: 0;
+            animation: fadeIn 3s ease forwards;
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideUp {
+            from {opacity: 0; transform: translateY(40px);}
+            to {opacity: 1; transform: translateY(0);}
+        }
+    </style>
+</head>
+<body>
+    <div id="intro">
+        <h1>จะเปิดไหม...? 🤔</h1>
+        <button onclick="enterSite()">กดเปิดเร็ว 🚀</button>
+    </div>
+
+    <audio id="bgMusic" loop>
+        <source src="กกกกกกกก.mp4" type="audio/mpeg">
+        เบราว์เซอร์ของคุณไม่รองรับเสียง
+    </audio>
+
+    <div class="container" id="mainContent">
+        <h2 class="farewell-text">
+            ขอบคุณบี๋มากๆเลยที่วันนั้นขึ้นรถมาจกปูนด้วย555555💫 <br><br>
+            พูดแล้วเขิล ตอนนั้นคือ เขิล มากกกก ชวนคุยไม่เก่ง 
+            แล้วก็ขอบคุณที่ยังไม่ทิ้งกันไปในเวลาที่เค้าทำตัวแย่ๆใส่บี๋ <br><br>
+            เห็นไหมบอกแล้วเวลาผ่านไปไวมากกกก แปปเดียวเอง 
+            บอกแล้ว วันแรกหวานยังไงก็จะหวานตลอดไปเลยย <br><br>
+            อยู่วีนเค้าไปนานๆน่ะ 55555 โอ้ย ไม่รู้จะพิมพ์อะไรแล้ว เขิล 
+            ตามจริง รูปมีตั้ง 500 รูป เค้าถ่ายตลอด แหละ 5555 <br><br>
+            ไอ้บ้าก็ทำตัวน่ารักแบบนี้จะไม่ให้รักได้ไงอยู่กันไปนานๆเลยได้ไหมม 
+            สุดท้ายเลย ขอบคุณที่ทำให้รู้จักรักน่ะ 💖 <br><br>
+            ปล. จุ๊ฟฟ ✨🩷❤️
+        </h2>
+        
+        <div class="video-container">
+            <video controls autoplay muted playsinline>
+                <source src="1d.mp4" type="video/mp4">
+                เบราว์เซอร์ของคุณไม่รองรับการเล่นวิดีโอ
+            </video>
+        </div>
+
+        <div class="grid">
+            <img src="Luv/IMG_20250531_023910.png" alt="รูป 1">
+            <img src="Luv/IMG_20250608_043344.jpg" alt="รูป 2">
+            <img src="Luv/IMG_20250609_233223.png" alt="รูป 3">
+            <img src="Luv/IMG_20250727_210112.png" alt="รูป 4">
+            <img src="Luv/IMG_20250821_025148.png" alt="รูป 5">
+            <img src="Luv/quality_restoration_20250620012511480.png" alt="รูป 6">
+            <img src="Luv/quality_restoration_20250825044755399.png" alt="รูป 7">
+            <img src="Luv/quality_restoration_20250725000441464.png" alt="รูป 8">
+            <img src="Luv/IMG_7502.png.jpg" alt="รูป 9">
+        </div>
+
+        <footer>
+            ❤ ความทรงจำที่ดี ❤
+        </footer>
+    </div>
+
+    <script>
+        function enterSite() {
+            document.getElementById("intro").style.opacity = "0";
+            setTimeout(() => {
+                document.getElementById("intro").style.display = "none";
+                document.getElementById("mainContent").style.display = "block";
+                // เล่นเพลง
+                let music = document.getElementById("bgMusic");
+                music.play().catch(err => {
+                    console.log("Autoplay ถูกบล็อก ต้องกด manual", err);
+                });
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
